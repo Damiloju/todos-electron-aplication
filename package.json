@@ -1,8 +1,8 @@
 {
-  "name": "electron-bulma-template",
-  "productName": "electron-bulma-template",
-  "version": "1.0.0",
-  "description": "An electron, Vue.js and Bulma starting point for all!",
+  "name": "todos-electron-application",
+  "productName": "Todos",
+  "version": "0.1.0",
+  "description": " A Todos electron application using Vue.js and Bulma!",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jcramirez/electron-bulma-template.git"
+    "url": "https://github.com/Damiloju/todos-electron-aplication.git"
   },
   "keywords": [
     "Electron",
@@ -24,8 +24,7 @@
     "demo",
     "template"
   ],
-  "author": "jcramirez",
-  "license": "CC0-1.0",
+  "author": "Damiloju",
   "devDependencies": {
     "electron": "^1.4.1",
     "electron-rebuild": "^1.4.0",
