@@ -6,9 +6,19 @@ const Vue = require('./node_modules/vue/dist/vue')
 let vueApp = new Vue({
   el: '#app',
   data: {
-    message: 'Hola, Earth!',
-    buttonText: 'I\'m button',
-    counter: 0
+    message: 'Welcome to todos, add your todos below.',
+    buttonText: 'Add Item',
+    counter: 0,
+    todos: [
+      {
+        name: 'Wash Plate',
+        completed:false
+      },
+      {
+        name: 'Sing For Brain',
+        completed:false
+      }
+    ]
   },
   methods: {
     button: function () {
