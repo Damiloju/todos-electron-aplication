@@ -22,6 +22,7 @@ let vueApp = new Vue({
         name: this.newTodo,
         completed: false
       });
+      this.newTodo = '';
       this.buttonDisabled = false;
     }
   } // end of methods
