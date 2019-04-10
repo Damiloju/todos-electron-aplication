@@ -8,21 +8,21 @@ let vueApp = new Vue({
   data: {
     message: 'Welcome to todos, add your todos below.',
     buttonText: 'Add Item',
+    newTodo: "",
+    buttonDisabled: false,
     counter: 0,
     todos: [
-      {
-        name: 'Wash Plate',
-        completed:false
-      },
-      {
-        name: 'Sing For Brain',
-        completed:false
-      }
+      
     ]
   },
   methods: {
-    button: function () {
-      this.buttonText = `Been clicked ${++this.counter} times`
+    addTodo() {
+      this.buttonDisabled = true;
+      this.todos.push({
+        name: this.newTodo,
+        completed: false
+      });
+      this.buttonDisabled = false;
     }
   } // end of methods
 })

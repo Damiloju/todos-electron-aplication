@@ -79,7 +79,7 @@
             <label class="label">Item</label>
             <div class="control">
               <p class="control has-icons-left has-icons-right">
-                <input class="input is-primary is-rounded" type="text" placeholder="Item">
+                <input v-model="newTodo" class="input is-primary is-rounded" type="text" placeholder="Item">
                 <span class="icon is-small is-left">
                   <i class="fas fa-bars"></i>
                 </span>
@@ -88,7 +88,7 @@
             <br/>
             <div class="field">
              <div class="control">
-                 <button v-on:click.preventDefault="button" class="button is-rounded is-link is-outlined is-pulled-right">{{ buttonText}}</button>              
+                 <button @click.preventDefault="addTodo" class="button is-rounded is-link is-outlined is-pulled-right" :disabled="buttonDisabled">{{ buttonText}}</button>              
              </div>
             </div>
           </div>
