@@ -12,12 +12,23 @@ let vueApp = new Vue({
     buttonDisabled: false,
     counter: 0,
     todos: [
-      
+      {
+        name: "Fuck them",
+        completed:false
+      },
+      {
+        name: "Guy them",
+        completed:false
+      }
     ]
   },
   methods: {
     addTodo() {
       this.buttonDisabled = true;
+      if(this.newTodo === "" || this.newTodo == "undefined"){
+        this.buttonDisabled = false;
+        return;
+      }
       this.todos.push({
         name: this.newTodo,
         completed: false

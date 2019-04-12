@@ -79,7 +79,7 @@
             <label class="label">Item</label>
             <div class="control">
               <p class="control has-icons-left has-icons-right">
-                <input v-model="newTodo" class="input is-primary is-rounded" type="text" placeholder="Item">
+                <input @keydown.enter="addTodo" v-model="newTodo" class="input is-primary is-rounded" type="text" placeholder="Item" required>
                 <span class="icon is-small is-left">
                   <i class="fas fa-bars"></i>
                 </span>
@@ -102,11 +102,22 @@
                   <p>Your Current Todos</p>
                 </div>
                 <div class="message-body">
-                  <ul v-for="todo in todos">
-                      <li class="panel-block">
-                          {{ todo.name }}
-                      </li>
-                  </ul>
+                  <table class="table is-hoverable is-striped is-fullwidth">
+                      <thead>
+                          <tr>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Toggle State</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="todo in todos">
+                            <td>{{ todo.name }}</td>
+                            <td>{{todo.completed ? "Completed":"Incomplete" }}</td>
+                            <td><input type="checkbox" v-model="todo.completed"></td>
+                          </tr>
+                        </tbody>
+                  </table>
                 </div>
               </article>
         </div>
