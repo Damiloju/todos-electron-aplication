@@ -28,7 +28,7 @@
       }
 
       .completed { 
-        text-decoration: line-through; 
+        text-decoration: line-through wavy red; 
         }
     </style>
 
@@ -116,7 +116,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr v-for="todo in todos" :key="todo.id">
+                          <tr v-for="todo in todos" :key="todo.name">
                             <span>
                                 <td :class="{ completed: todo.completed }">{{ todo.name }}</td>
                                 <td>{{todo.completed ? "Completed":"Incomplete" }}</td>
