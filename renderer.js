@@ -5,22 +5,17 @@ const Vue = require('./node_modules/vue/dist/vue')
 
 let vueApp = new Vue({
   el: '#app',
+  mounted() {
+    console.log('App mounted!');
+    if (localStorage.getItem('todos')) this.todos = JSON.parse(localStorage.getItem('todos'));
+  },
   data: {
     message: 'Welcome to todos, add your todos below.',
     buttonText: 'Add Item',
     newTodo: "",
     buttonDisabled: false,
     counter: 0,
-    todos: [
-      {
-        name: "Fuck them",
-        completed:false
-      },
-      {
-        name: "Guy them",
-        completed:false
-      }
-    ]
+    todos: []
   },
   methods: {
     addTodo() {
@@ -36,5 +31,14 @@ let vueApp = new Vue({
       this.newTodo = '';
       this.buttonDisabled = false;
     }
-  } // end of methods
+  }, // end of methods
+  watch: {
+    todos: {
+      handler() {
+        console.log('Todos changed!');
+        localStorage.setItem('todos', JSON.stringify(this.todos));
+      },
+      deep: true,
+    },
+  },
 })

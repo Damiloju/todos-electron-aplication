@@ -26,6 +26,10 @@
         width: 100vw;
         height: 100vh;
       }
+
+      .completed { 
+        text-decoration: line-through; 
+        }
     </style>
 
   </head>
@@ -112,9 +116,11 @@
                         </thead>
                         <tbody>
                           <tr v-for="todo in todos">
-                            <td>{{ todo.name }}</td>
-                            <td>{{todo.completed ? "Completed":"Incomplete" }}</td>
-                            <td><input type="checkbox" v-model="todo.completed"></td>
+                            <span>
+                                <td :class="{ completed: todo.completed }">{{ todo.name }}</td>
+                                <td>{{todo.completed ? "Completed":"Incomplete" }}</td>
+                                <td><input type="checkbox" v-model="todo.completed"></td>
+                            </span>
                           </tr>
                         </tbody>
                   </table>
