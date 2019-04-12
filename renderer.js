@@ -26,10 +26,15 @@ let vueApp = new Vue({
       }
       this.todos.push({
         name: this.newTodo,
-        completed: false
+        completed: false,
+        id: this.todos.length + 1
       });
       this.newTodo = '';
       this.buttonDisabled = false;
+    },
+    deleteTodo(id){
+      console.log("deleting");
+      this.todos.splice(id-1,1);
     }
   }, // end of methods
   watch: {
