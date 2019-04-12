@@ -112,6 +112,7 @@
                             <th>Task</th>
                             <th>Status</th>
                             <th>Toggle State</th>
+                            <th>Delete</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -119,7 +120,12 @@
                             <span>
                                 <td :class="{ completed: todo.completed }">{{ todo.name }}</td>
                                 <td>{{todo.completed ? "Completed":"Incomplete" }}</td>
-                                <td><input type="checkbox" v-model="todo.completed"></td>
+                                <td><input class="checkbox is-primary is-rounded" type="checkbox" v-model="todo.completed"></td>
+                                <td>
+                                  <span class="button is-rounded is-link is-outlined">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                  </span>
+                              </td>
                             </span>
                           </tr>
                         </tbody>
